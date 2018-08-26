@@ -16,7 +16,7 @@ public class FlightBookingPage {
     WebDriver driver = new ChromeDriver();
 
 
-    @Test
+    
     public void testThatResultsAppearForAOneWayJourney() {
 
         setDriverPath();

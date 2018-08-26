@@ -40,7 +40,7 @@ public class HotelBookingPage extends TestBase {
     	PageFactory.initElements(driver, this);
     }
 
-    @Test
+    
     public void shouldBeAbleToSearchForHotels() throws InterruptedException {
     	
        /* //setDriverPath();
