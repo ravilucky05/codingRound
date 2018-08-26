@@ -1,3 +1,4 @@
+package com.vagarant.test.tests;
 import com.sun.javafx.PlatformUtil;
 import com.vagarant.test.base.TestBase;
 
@@ -22,7 +23,7 @@ public class HotelBookingTest extends TestBase {
     private WebElement hotelLink;*/
     
 	@FindBy(xpath = ".//a[contains(@title,'Find hotels in destinations around the world')]")
-    private WebElement hotelLink;
+    private By hotelLink;
 
    // @FindBy(id = "Tags")
     //private WebElement localityTextBox;
@@ -50,11 +51,13 @@ public class HotelBookingTest extends TestBase {
         /*driver.get("https://www.cleartrip.com/");*/
        WebDriverWait wait1 = new WebDriverWait(driver, 500);
         wait1.until(ExpectedConditions.visibilityOfElementLocated((By.xpath(".//a[contains(@title,'Find hotels in destinations around the world')]")))).click();
+        
+        wait1.until(ExpectedConditions.visibilityOfElementLocated((hotelLink))).click();
         //Thread.sleep(10000);
        // hotelLink.click();
        // wait1.until(ExpectedConditions.visibilityOfElementLocated(localityTextBox));
 
-        localityTextBox.sendKeys("Indiranagar, Bangalore");
+       // localityTextBox.sendKeys("Indiranagar, Bangalore");
 
         new Select(travellerSelection).selectByVisibleText("1 room, 2 adults");
         searchButton.click();

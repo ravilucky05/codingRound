@@ -1,3 +1,4 @@
+package com.vagarant.test.pages;
 import com.sun.javafx.PlatformUtil;
 import com.vagarant.test.base.TestBase;
 
@@ -14,7 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class HotelBookingTest extends TestBase {
+public class HotelBookingPage extends TestBase {
 
     
 
@@ -35,7 +36,7 @@ public class HotelBookingTest extends TestBase {
     @FindBy(id = "travellersOnhome")
     private WebElement travellerSelection;
     
-    public HotelBookingTest() throws IOException{
+    public HotelBookingPage() throws IOException{
     	PageFactory.initElements(driver, this);
     }
 
@@ -45,7 +46,7 @@ public class HotelBookingTest extends TestBase {
        /* //setDriverPath();
     	System.setProperty("webdriver.chrome.driver", "C:\\Users\\varanar.UTCCGL\\Downloads\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();*/
-        PageFactory.initElements(driver, HotelBookingTest.class);
+        PageFactory.initElements(driver, HotelBookingPage.class);
 
         /*driver.get("https://www.cleartrip.com/");*/
        WebDriverWait wait1 = new WebDriverWait(driver, 500);

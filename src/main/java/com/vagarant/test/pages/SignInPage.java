@@ -1,4 +1,9 @@
+package com.vagarant.test.pages;
 import com.sun.javafx.PlatformUtil;
+import com.vagarant.test.base.TestBase;
+
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,17 +11,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SignInTest {
+public class SignInPage extends TestBase {
 
 	
-    WebDriver driver;
+    public SignInPage() throws IOException{
+    	
+    	super();
+    	
+    }
 
-    @Test
+   
     public void shouldThrowAnErrorIfSignInDetailsAreMissing() {
 
         //setDriverPath();
-    	System.setProperty("webdriver.chrome.driver", "C:\\Users\\varanar.UTCCGL\\Downloads\\chromedriver.exe");
-    	driver = new ChromeDriver();
+    	/*System.setProperty("webdriver.chrome.driver", "C:\\Users\\varanar.UTCCGL\\Downloads\\chromedriver.exe");
+    	driver = new ChromeDriver();*/
     	
 
         driver.get("https://www.cleartrip.com/");
@@ -43,7 +52,7 @@ public class SignInTest {
         }
     }
 
-    private void setDriverPath() {
+    /*private void setDriverPath() {
         if (PlatformUtil.isMac()) {
             System.setProperty("webdriver.chrome.driver", "chromedriver");
         }
@@ -53,7 +62,7 @@ public class SignInTest {
         if (PlatformUtil.isLinux()) {
             System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
         }
-    }
+    }*/
 
 
 }
