@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="45824" started-at="2018-08-29T18:04:08Z" finished-at="2018-08-29T18:04:54Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="45824" started-at="2018-08-29T18:04:08Z" finished-at="2018-08-29T18:04:54Z">
+      <class name="com.vagarant.test.tests.HotelBookingTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.vagarant.test.tests.HotelBookingTest@146ba0ac]" name="setUp" is-config="true" duration-ms="22878" started-at="2018-08-29T18:03:45Z" finished-at="2018-08-29T18:04:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="SearchingHotels()[pri:0, instance:com.vagarant.test.tests.HotelBookingTest@146ba0ac]" name="SearchingHotels" duration-ms="45734" started-at="2018-08-29T18:04:08Z" finished-at="2018-08-29T18:04:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchingHotels -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.vagarant.test.tests.HotelBookingTest@146ba0ac]" name="tearDown" is-config="true" duration-ms="1322" started-at="2018-08-29T18:04:54Z" finished-at="2018-08-29T18:04:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.vagarant.test.tests.HotelBookingTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
