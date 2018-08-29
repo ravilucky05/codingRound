@@ -2,11 +2,15 @@ package com.vagarant.test.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -67,6 +71,15 @@ public class TestUtil extends com.vagarant.test.base.TestBase {
 		}
 	}
 
+	public static boolean isElementPresent(By by) {
+		try {
+			driver.findElement(by);
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
+
 	public static String[] splitDate(String cDate) {
 		String dateArr[] = cDate.split("-");
 
@@ -89,6 +102,24 @@ public class TestUtil extends com.vagarant.test.base.TestBase {
 			nextMonthM.click();
 
 		}
+
+	}
+
+	public static void waitFor(int durationInMilliSeconds) {
+		try {
+			Thread.sleep(durationInMilliSeconds);
+		} catch (InterruptedException e) {
+			e.printStackTrace(); // To change body of catch statement use File |
+									// Settings | File Templates.
+		}
+	}
+
+	public static String getCurrentDay() {
+
+		Date date = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MMMM-yyyy");
+		String strDate = formatter.format(date);
+		return strDate;
 
 	}
 

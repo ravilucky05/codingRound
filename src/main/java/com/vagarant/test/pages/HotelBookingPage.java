@@ -49,6 +49,9 @@ public class HotelBookingPage extends TestBase {
 	@FindBy(className = "ui-state-default ")
 	private List<WebElement> totalDays;
 
+	@FindBy(xpath = "ui-state-default ui-state-highlight ui-state-active")
+	private WebElement todayDate;
+
 	String Loc = prop.getProperty("Location");
 
 	public HotelBookingPage() throws IOException {
@@ -71,35 +74,47 @@ public class HotelBookingPage extends TestBase {
 
 		calendarIconIn.click();
 
-		// String date = prop.getProperty("jDate");
-		String checkInDate = "30-September-2018";
+		String today = TestUtil.getCurrentDay();
 
-		String dateArrIn[] = TestUtil.splitDate(checkInDate);
+		String toDay[] = TestUtil.splitDate(today);
+		String tdayIn = toDay[0];
+		String tmonthIn = toDay[1];
+		String tyearIn = toDay[2];
+		System.out.println("Today's number: " + today + "\n");
+
+		String dateArrIn[] = TestUtil.splitDate(prop.getProperty("checkInDate"));
 		String dayIn = dateArrIn[0];
 		String monthIn = dateArrIn[1];
 		String yearIn = dateArrIn[2];
 
-		System.out.println("given day" + dayIn);
-
 		String newmonth = "";
 
-		// if it is todays date, differemt class,
+		if (dayIn.equals(tdayIn)) {
 
-		TestUtil.loopMonthandDay(currentMonth, dayIn, monthIn, nextMonth, totalDays);
+			todayDate.click();
 
-		String checkOutDate = "10-October-2018";
+		} else {
+			TestUtil.loopMonthandDay(currentMonth, dayIn, monthIn, nextMonth, totalDays);
+		}
 
-		String dateArrOut[] = TestUtil.splitDate(checkOutDate);
+		String dateArrOut[] = TestUtil.splitDate(prop.getProperty("checkOutDate"));
 		String dayOut = dateArrOut[0];
 		String monthOut = dateArrOut[1];
 		String yearOut = dateArrOut[2];
 
 		calendarIconOut.click();
+		if (dayOut.equals(tdayIn)) {
 
-		TestUtil.loopMonthandDay(currentMonth, dayOut, monthOut, nextMonth, totalDays);
+			todayDate.click();
+
+		} else {
+			TestUtil.loopMonthandDay(currentMonth, dayOut, monthOut, nextMonth, totalDays);
+		}
 
 		Select select = new Select(travellerSelection);
 		select.selectByVisibleText("1 room, 2 adults");
+
+		Thread.sleep(5000);
 
 		searchButton.click();
 

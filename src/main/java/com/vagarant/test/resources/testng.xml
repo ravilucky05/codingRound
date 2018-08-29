@@ -8,7 +8,10 @@
 	<test name="Test Cases">
 		<classes>
 					
-			<class name="com.vagarant.test.tests.SignInTest"></class>
+			
+			<class name="com.vagarant.test.tests.HotelBookingTest"></class>
+			<!--  <class name="com.vagarant.test.tests.FlightBookingTest"></class>
+			<class name="com.vagarant.test.tests.SignInTest"></class> -->
 			
 
 		</classes>
